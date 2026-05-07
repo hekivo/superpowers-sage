@@ -20,6 +20,9 @@ jobs:
       - name: Verify cursor-hooks.json is in sync with hooks.json
         run: node scripts/sync-cursor-hooks.mjs --check
 
+      - name: Verify Codex/Cursor manifests are in sync with Claude
+        run: node scripts/sync-codex-manifests.mjs --check
+
   tests:
     name: Script tests
     runs-on: ubuntu-latest

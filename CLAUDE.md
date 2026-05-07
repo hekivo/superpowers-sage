@@ -8,10 +8,12 @@ precedence over skill-local guidance unless a skill explicitly overrides.
 - All `wp`, `composer`, `artisan`, `yarn`, `npm` commands run via `lando <cmd>`.
   Never invoke these binaries directly on the host.
 - Sage projects use Bedrock. Custom code lives in `web/app/`, never in `web/wp/`.
-- The plugin supports Claude Code, VS Code Copilot, and Cursor.
+- The plugin supports Claude Code, VS Code Copilot, Cursor, and OpenAI Codex.
   When contributing to this plugin — adding or updating automation hooks —
-  keep both `hooks/hooks.json` and `hooks/cursor-hooks.json` in sync via
-  `scripts/sync-cursor-hooks.mjs`.
+  keep `hooks/hooks.json` and `hooks/cursor-hooks.json` in sync via
+  `scripts/sync-cursor-hooks.mjs`. Manifest versions across
+  `.claude-plugin/`, `.cursor-plugin/`, and `.codex-plugin/` are aligned by
+  `scripts/sync-codex-manifests.mjs` (also enforced in CI).
 
 ## Protected files (never edit directly)
 
