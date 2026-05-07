@@ -1,6 +1,6 @@
 # Superpowers Sage
 
-Agent plugin for modern WordPress development with the **Roots ecosystem** — works with **Claude Code**, **VS Code (GitHub Copilot)**, **Cursor**, and any AI assistant that supports the agent plugin format. Workflow skills, design tool integration, visual verification, content modeling, and zero-token automation hooks for **Sage**, **Acorn**, and **Lando** projects.
+Agent plugin for modern WordPress development with the **Roots ecosystem** — works with **Claude Code**, **VS Code (GitHub Copilot)**, **Cursor**, **OpenAI Codex**, and any AI assistant that supports the agent plugin format. Workflow skills, design tool integration, visual verification, content modeling, and zero-token automation hooks for **Sage**, **Acorn**, and **Lando** projects.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ Agent plugin for modern WordPress development with the **Roots ecosystem** — w
 
 ## Installation
 
-> **One repository, three loaders.** The same plugin installs identically regardless of your AI assistant. Pick the section for your tool below.
+> **One repository, four loaders.** The same plugin installs identically regardless of your AI assistant. Pick the section for your tool below.
 
 ---
 
@@ -101,6 +101,38 @@ Cursor discovers skills and agents from `.cursor/rules/` automatically. Hooks ar
 
 ---
 
+### OpenAI Codex
+
+The plugin ships with a `.codex-plugin/plugin.json` manifest that follows the
+[Codex plugin format](https://developers.openai.com/codex/plugins/build).
+
+**Personal install:**
+
+1. Clone or symlink the repository into your Codex plugins directory:
+
+   ```bash
+   git clone https://github.com/codigodoleo/superpowers-sage ~/.codex/plugins/superpowers-sage
+   ```
+
+2. Register it in your personal marketplace at `~/.agents/plugins/marketplace.json`:
+
+   ```json
+   {
+     "plugins": [
+       { "name": "superpowers-sage", "source": "./superpowers-sage" }
+     ]
+   }
+   ```
+
+**Repo-level install** — drop the same entry into
+`$REPO_ROOT/.agents/plugins/marketplace.json` and clone into
+`$REPO_ROOT/plugins/superpowers-sage`.
+
+Codex discovers skills from `skills/`, agents from `agents/`, and lifecycle
+hooks from `hooks/hooks.json` (referenced from `.codex-plugin/plugin.json`).
+
+---
+
 ### Local / Generic (any compatible assistant)
 
 Clone the repository and register the plugin directory:
@@ -178,14 +210,14 @@ For VS Code, add MCP servers in `.vscode/mcp.json` or user settings under `"mcp"
 
 ## Compatibility Matrix
 
-| Feature | Claude Code | VS Code Copilot | Cursor | Notes |
-|---|---|---|---|---|
-| Workflow skills (`/building`, etc.) | ✅ | ✅ | ✅ | All tools load `skills/` |
-| Custom agents | ✅ | ✅ | ✅ | All tools load `agents/` |
-| Hooks (lifecycle automation) | ✅ | ✅ | ✅ | Claude/VS Code use `hooks/hooks.json`; Cursor uses `hooks/cursor-hooks.json` |
-| MCP design tools | ✅ | ✅ | ✅ | Configure per tool's MCP settings |
-| Marketplace install | ✅ | ✅ | — | Cursor installs direct from repository |
-| Namespaced skills | `superpowers-sage:building` | `superpowers-sage:building` | `/building` | Cursor may omit namespace prefix |
+| Feature | Claude Code | VS Code Copilot | Cursor | Codex | Notes |
+|---|---|---|---|---|---|
+| Workflow skills (`/building`, etc.) | ✅ | ✅ | ✅ | ✅ | All loaders read `skills/` |
+| Custom agents | ✅ | ✅ | ✅ | ✅ | All loaders read `agents/` |
+| Hooks (lifecycle automation) | ✅ | ✅ | ✅ | ✅ | Claude/VS Code/Codex use `hooks/hooks.json`; Cursor uses `hooks/cursor-hooks.json` |
+| MCP design tools | ✅ | ✅ | ✅ | ✅ | Configure per tool's MCP settings |
+| Marketplace install | ✅ | ✅ | — | ✅ | Cursor installs direct from repository; Codex via `~/.agents/plugins/marketplace.json` |
+| Namespaced skills | `superpowers-sage:building` | `superpowers-sage:building` | `/building` | `superpowers-sage:building` | Cursor may omit namespace prefix |
 
 ## Getting Started
 
