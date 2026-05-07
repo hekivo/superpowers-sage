@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://github.com/codigodoleo/superpowers-sage/compare/superpowers-sage-v2.8.0...superpowers-sage-v2.9.0) (2026-05-07)
+
+
+### Features
+
+* **plugin:** add OpenAI Codex plugin support ([#43](https://github.com/codigodoleo/superpowers-sage/issues/43)) ([8817c2b](https://github.com/codigodoleo/superpowers-sage/commit/8817c2bc78b03c0ea23e724d353ffadc2c8a95e5))
+
 ## [2.8.0](https://github.com/codigodoleo/superpowers-sage/compare/superpowers-sage-v2.7.0...superpowers-sage-v2.8.0) (2026-04-21)
 
 
