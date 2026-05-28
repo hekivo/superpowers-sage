@@ -7,6 +7,8 @@ description: >
   Constraint Validation API, form traps pattern escaping type-tel
   ValidityState non-enumerable — stateless contact forms with progressive
   JS validation on top of the HTML Forms WordPress plugin.
+  Invoke for: contact form with HTML Forms plugin, hf_get_form usage, form validation
+  with Constraint API, pattern escaping trap, type=tel Chrome bug, form audit.
 user-invocable: false
 ---
 

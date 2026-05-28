@@ -5,7 +5,9 @@ description: >
   current_user_can, user_can, WP_Roles, custom capabilities, administrator editor
   author contributor subscriber, capability mapping, meta capabilities,
   map_meta_cap, register_post_type capabilities, custom post type capabilities,
-  WP_User roles and caps, ACF field group visibility by role
+  WP_User roles and caps, ACF field group visibility by role.
+  Invoke for: custom roles, multi-role sites, restrict content by capability,
+  map_meta_cap, "hide ACF field from role", "register capability for CPT".
 user-invocable: false
 ---
 # WordPress Capabilities and Authorization

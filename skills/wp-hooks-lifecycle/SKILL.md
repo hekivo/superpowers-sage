@@ -6,7 +6,9 @@ description: >
   after_setup_theme, the_content filter, wp_enqueue_scripts, admin_enqueue_scripts,
   hook execution order, Acorn hook registration in AppServiceProvider, boot hooks,
   register hooks, WordPress hook reference, Tailwind CSS filter conflicts, save_post,
-  transition_post_status, pre_get_posts, late hooks, early hooks
+  transition_post_status, pre_get_posts, late hooks, early hooks.
+  Invoke for: hook priority conflicts, unexpected filter behavior, wptexturize corruption,
+  Acorn vs WordPress hook timing, save_post edge cases, enqueue order issues.
 user-invocable: false
 ---
 # WordPress Hooks and Lifecycle

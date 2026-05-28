@@ -6,6 +6,8 @@ description: >
   Core Web Vitals, LCP, CLS, INP, FID, profiling, Xdebug, microtime, pre_get_posts,
   database query optimization, TTFB, page load, Vite bundle, lazy loading, critical CSS —
   benchmark before/after, never optimize blind.
+  Invoke for: slow page load, N+1 query problem, caching strategy, transient API,
+  dequeue unused scripts, performance profiling, Core Web Vitals improvement.
 user-invocable: false
 ---
 

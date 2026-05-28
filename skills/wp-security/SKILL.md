@@ -6,7 +6,9 @@ description: >
   esc_url, wp_kses, SQL injection prevention, $wpdb->prepare(), capability checks,
   current_user_can, authentication hardening, wp-config.php secrets,
   security headers, file permissions, Bedrock .env secrets, disable XML-RPC,
-  brute force wp-login.php, CSRF protection
+  brute force wp-login.php, CSRF protection.
+  Invoke for: security audit, input sanitization, output escaping, nonce verification,
+  SQL injection prevention, CSRF protection, capability checks in REST endpoints.
 user-invocable: false
 ---
 
