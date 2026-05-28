@@ -176,39 +176,50 @@ if [ "$FIRST_RUN" != "yes" ]; then
 fi
 
 #############################################
-# 7) Read sageing skill content              #
+# 7) Build compact skill routing summary     #
 #############################################
 
-SKILL_CONTENT=""
-if [ -f "${PLUGIN_ROOT}/skills/sageing/SKILL.md" ]; then
-  SKILL_CONTENT=$(cat "${PLUGIN_ROOT}/skills/sageing/SKILL.md" 2>/dev/null || true)
-elif [ -f "${PLUGIN_ROOT}/skills/sage-lando/SKILL.md" ]; then
-  SKILL_CONTENT=$(cat "${PLUGIN_ROOT}/skills/sage-lando/SKILL.md" 2>/dev/null || true)
-fi
-
-# Escape for JSON
-SKILL_ESCAPED=$(echo "$SKILL_CONTENT" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g' | awk '{printf "%s\\n", $0}')
+COMPACT_GUIDE="Runner: all wp/composer/php/node/npm commands via \`lando <cmd>\`. Never run on host."
+COMPACT_GUIDE="${COMPACT_GUIDE}\nCache: \`lando flush\` (PHP changes) · \`lando theme-build\` (CSS/JS changes)."
+COMPACT_GUIDE="${COMPACT_GUIDE}\n"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Task | Invoke |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n|---|---|"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Understand project state | \`/onboarding\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Architecture + planning | \`/architecture-discovery\` then \`/plan-generator\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Implement from plan | \`/building\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Scaffold new ACF block | \`/block-scaffolding\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Refactor existing block | \`/block-refactoring\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Design → Blade/tokens | \`/designing\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Convention audit + PR | \`/reviewing\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Debug PHP/Blade/Livewire | \`/debugging\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Visual screenshot diff | \`/verifying\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Safe data migration | \`/migrating\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| Design system setup | \`/sage-design-system\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n| AI/MCP installation | \`/ai-setup\` |"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n"
+COMPACT_GUIDE="${COMPACT_GUIDE}\nPreferred patterns: CPTs → Poet \xb7 Routes → Acorn Routes \xb7 Fields/Blocks → ACF Composer \xb7 Interactive UI → Livewire."
+COMPACT_GUIDE="${COMPACT_GUIDE}\nFor full architectural preferences and MCP query patterns: invoke \`sageing\`."
 
 #############################################
-# 8) Build context and output                #
+# 8) Build final context and output          #
 #############################################
 
-SUMMARY="Sage/Acorn project detected. Read the onboarding below, then use the 'Skill' tool."
-SUMMARY="${SUMMARY}\n\nLando detected: ${LANDO_YML}"
-SUMMARY="${SUMMARY}\n\nDetected Sage themes:${THEMES}"
 [ -n "$ACORN_VER" ] && [ "$ACORN_VER" != "unknown" ] && THEMES_EXTRA=" (Acorn v${ACORN_VER}, Livewire: ${LIVEWIRE})"
-SUMMARY="${SUMMARY}${THEMES_EXTRA:-}"
-SUMMARY="${SUMMARY}\n\nDesign Tools: Paper: ${PAPER} | Stitch: ${STITCH} | Figma: ${FIGMA} | Playwright: ${PLAYWRIGHT} | Chrome: ${CHROME}"
+
+SUMMARY="Sage/Acorn project detected."
+SUMMARY="${SUMMARY}\n\nLando: ${LANDO_YML}"
+SUMMARY="${SUMMARY}\nDetected Sage themes:${THEMES}${THEMES_EXTRA:-}"
+SUMMARY="${SUMMARY}\nDesign Tools: Paper: ${PAPER} | Stitch: ${STITCH} | Figma: ${FIGMA} | Playwright: ${PLAYWRIGHT} | Chrome: ${CHROME}"
 
 if [ -n "$ACTIVE_PLAN" ]; then
   SUMMARY="${SUMMARY}\n\nActive Plan: ${ACTIVE_PLAN}/plan.md (${PLAN_TITLE}). Assets: ${PLAN_ASSETS}"
 fi
 
 if [ -n "$SETUP_INSTRUCTIONS" ]; then
-  SUMMARY="${SUMMARY}\n\n--- Setup Instructions ---${SETUP_INSTRUCTIONS}"
+  SUMMARY="${SUMMARY}\n\n--- Setup ---${SETUP_INSTRUCTIONS}"
 fi
 
-SUMMARY="${SUMMARY}\n\n${SKILL_ESCAPED}"
+SUMMARY="${SUMMARY}\n\n${COMPACT_GUIDE}"
 SUMMARY="${SUMMARY}\n\nTip: Run /onboarding for a full project analysis."
 
 cat <<EOF
