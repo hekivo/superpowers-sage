@@ -1,11 +1,16 @@
 ---
 name: superpowers-sage:sageing
 description: >
-  Meta-skill for Sage/Acorn projects — gerund workflow ecosystem, Lando commands,
-  architectural preferences, plan system, design tool integration, skill routing,
-  WordPress MCP Adapter, discover-abilities, execute-ability, mcp-query-patterns,
-  query-first workflow, Acorn, Bedrock, Sage theme, roots ecosystem, when to use
-  which skill — read this first in any Sage/Acorn project session
+  Full architectural preferences and skill routing map for Sage/Acorn projects —
+  complete workflow ecosystem reference, Lando command tables, design tool URL routing
+  (Paper/Stitch/Figma/Pencil/Playwright), MCP query patterns, discover-abilities,
+  execute-ability, WordPress MCP Adapter, plan system structure, integration with base
+  superpowers skills.
+  Invoke for: "which skill should I use", "architectural preferences", "design tool
+  routing", "mcp query patterns", "full skill list", "sage ecosystem overview",
+  "when to use Livewire vs Blade", "Acorn vs WordPress pattern decision".
+  Skip when: the session-start routing table already covers your decision — invoke the
+  target skill directly instead of loading this overview first.
 ---
 
 # Sageing — The Sage/Acorn Ecosystem Guide
