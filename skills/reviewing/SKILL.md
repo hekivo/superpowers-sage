@@ -1,10 +1,13 @@
 ---
 name: superpowers-sage:reviewing
 description: >
-  Code review for Sage/Acorn projects — review PHP Blade JS CSS,
-  review Service Providers ACF Composer blocks Livewire components,
-  Eloquent models Acorn routes, security review, performance review,
-  code quality, coding standards, PR review workflow, code review checklist
+  Convention audit and pre-PR code review for Sage/Acorn projects — checks PHP Blade JS CSS
+  against Sage/Acorn/Tailwind v4 conventions; audits ACF Composer field patterns,
+  Livewire component structure, Eloquent models, Acorn routes, Blade components;
+  verifies design alignment; dispatches sage-reviewer agent; prepares code for PR merge.
+  Invoke for: "review before PR", "run sage-reviewer", "convention audit",
+  "/reviewing", "check my block for issues", "pre-merge review", "review this code".
+  Skip when: you just need to read or understand a file — that is not a review session.
 user-invocable: true
 argument-hint: "[file path or scope]"
 ---

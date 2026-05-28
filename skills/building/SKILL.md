@@ -1,11 +1,14 @@
 ---
 name: superpowers-sage:building
 description: >
-  Build a feature in a Sage/Acorn project — implement from an approved plan,
-  write code, commit, iterate; orchestrates acorn-routes, acorn-livewire,
-  acorn-eloquent, block-scaffolding, acorn-commands; TDD in Sage,
-  implementation phase, commit hygiene, PR creation, incremental delivery,
-  changelog entry, lando acorn, lando yarn build, lando yarn dev
+  Plan-driven implementation in Sage/Acorn — reads docs/plans/ directory, implements
+  components from approved sub-plans, runs scaffold generators (lando acorn acf:block),
+  commits incrementally, auto-invokes block-scaffolding per ACF block, runs lando flush
+  and lando theme-build after changes; full PR workflow with sage-reviewer gate.
+  Invoke for: "/building", "implement from the plan", "implement from the plan",
+  "build from the plan", "execute the plan", "start building", "code this feature".
+  Skip when: there is no approved plan yet — run /architecture-discovery then
+  /plan-generator first.
 user-invocable: true
 argument-hint: "[plan path or component description]"
 ---

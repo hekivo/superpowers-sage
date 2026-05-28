@@ -1,10 +1,14 @@
 ---
 name: superpowers-sage:onboarding
 description: >
-  Onboard to a Sage/Acorn/Lando project — understand project structure,
-  discover CPTs routes field groups Livewire components, lando start, lando info,
-  project orientation, first session setup, read CLAUDE.md, activate skills,
-  understand what exists before building, lando wp post-type list
+  Full project analysis for an unfamiliar Sage/Acorn/Lando project — discovers CPTs, routes,
+  ACF field groups, Livewire components, Service Providers, active plans, installed packages;
+  produces a structured project overview with health status and recommended next steps.
+  Invoke for: "/onboarding", "I'm new to this project", "what does this project do",
+  "show me what exists", "project overview", "orient me to this codebase",
+  "what exists in this project".
+  Skip when: you already know the project — the session-start hook already provided
+  basic stack info; invoke the target skill directly instead.
 user-invocable: true
 context: fork
 ---

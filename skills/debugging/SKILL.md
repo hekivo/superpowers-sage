@@ -1,13 +1,16 @@
 ---
 name: superpowers-sage:debugging
 description: >
-  Debug issues in Sage/Acorn/Lando projects — PHP errors, Blade rendering errors,
-  Livewire mount failures, Eloquent query errors, Acorn boot errors,
-  queue job failures, middleware blocking, WP hook conflicts,
-  lando logs, Query Monitor, Xdebug, lando php -r, WP_DEBUG, debug session
+  Structured troubleshooting for Sage/Acorn/Lando projects — diagnoses PHP errors, Blade
+  rendering failures, Livewire mount errors, Eloquent query issues, Acorn boot failures,
+  queue job failures, WP hook conflicts; uses lando logs, Query Monitor, Xdebug, WP_DEBUG.
+  Invoke for: "/debugging", "something is broken and I can't figure out why",
+  "lando logs show an error", "acorn boot error", "blade is rendering wrong",
+  "livewire component not mounting", "500 error", "debug this issue".
+  Skip when: you are building or implementing features — that is /building, not debugging.
 user-invocable: true
 disable-model-invocation: true
-argument-hint: "[error description]"
+argument-hint: "[error description or symptom]"
 ---
 
 # Debugging — Sage-Aware Troubleshooting
