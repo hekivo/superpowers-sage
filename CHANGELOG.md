@@ -1,5 +1,29 @@
 # Changelog
 
+## [Unreleased]
+
+### Performance
+
+* **hooks/session-start.sh**: Replace full `sageing` SKILL.md injection (270 lines, 18k chars)
+  with a compact 20-line routing table. Reduces session-start token cost by ~93%
+  (18.622 chars → ~1.284 chars per session).
+* **hooks/user-prompt-activate.sh**: Expand keyword router from 15 to 32 entries, adding
+  all workflow skills (reviewing, debugging, building, onboarding, architecture-discovery,
+  plan-generator, designing, verifying, migrating, sage-design-system, block-scaffolding,
+  block-refactoring, sageing, ai-setup, abilities-authoring) and domain reference skills
+  (wp-capabilities, wp-security, wp-performance, wp-hooks-lifecycle, wp-cli-ops,
+  sage-forms, wp-block-native). Verified with 13-case test suite: all passing.
+
+### Docs
+
+* **skills/sageing**: Remove "read this first in any Sage/Acorn project session" from
+  description — prevents reflexive double-loading (hook + Skill tool) every session.
+  Skill now activates on-demand for full architectural preferences and design tool routing.
+* **skills/reviewing, debugging, onboarding, building**: Add explicit `Invoke for:` and
+  `Skip when:` clauses to reduce false-positive loading from adjacent keyword matches.
+* **skills/wp-capabilities, wp-security, wp-performance, wp-hooks-lifecycle, sage-forms**:
+  Add `Invoke for:` with specific technical triggers.
+
 ## [2.9.0](https://github.com/codigodoleo/superpowers-sage/compare/superpowers-sage-v2.8.0...superpowers-sage-v2.9.0) (2026-05-07)
 
 
