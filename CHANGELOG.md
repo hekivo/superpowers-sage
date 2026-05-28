@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.10.0](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.9.0...superpowers-sage-v2.10.0) (2026-05-28)
+
+
+### Features
+
+* **hooks:** expand skill-router keyword map with workflow skills ([a070f05](https://github.com/hekivo/superpowers-sage/commit/a070f05f7b6ffd2e9c2441d5a46b087ea407c092))
+
+
+### Performance
+
+* **hooks:** replace full sageing injection with compact routing summary ([5b318b4](https://github.com/hekivo/superpowers-sage/commit/5b318b4c361be546ccce075ae0dcd241acd67150))
+
+
+### Documentation
+
+* add Docsify site for GitHub Pages ([af0b4a9](https://github.com/hekivo/superpowers-sage/commit/af0b4a9644fa76703e375db0dd2fa4fd145f1923))
+* add GitHub Pages link to README ([858406f](https://github.com/hekivo/superpowers-sage/commit/858406ff672847bf26f8cff8e855e6638f3d2532))
+* add token optimization changelog entry for upcoming release ([d175c7f](https://github.com/hekivo/superpowers-sage/commit/d175c7f8d4aa46618b63f649eda7f77305c21da3))
+* add usage guide design spec ([b1b99d6](https://github.com/hekivo/superpowers-sage/commit/b1b99d61e5eca38d90216a2068ab50ae67a1399a))
+* add usage guide implementation plan (10 tasks) ([ed868f9](https://github.com/hekivo/superpowers-sage/commit/ed868f9a27348e78f8760cff6d464ca430be1efe))
+* **guide:** add agents.md — all 11 agents including 5 previously undocumented ([47dd392](https://github.com/hekivo/superpowers-sage/commit/47dd392318276d85d8ef046ad013dab4830528e3))
+* **guide:** add commands.md — acf-register, livewire-new, sage-status ([8e92dc3](https://github.com/hekivo/superpowers-sage/commit/8e92dc30371e7f6352beb6ca6d24ebe6334b57f5))
+* **guide:** add hooks.md — session-start, keyword router (32 entries), diagnostics ([52e072c](https://github.com/hekivo/superpowers-sage/commit/52e072cd404d314b3b612ebfa4624ef555409ac4))
+* **guide:** add INDEX.md navigation hub ([dc94e59](https://github.com/hekivo/superpowers-sage/commit/dc94e59686ffdfa75c2d800c3bd82d6775e16047))
+* **guide:** add skills.md — all 19 workflow + 17 reference skills ([23227eb](https://github.com/hekivo/superpowers-sage/commit/23227eb6ca289830d0f70ede15472e10ba205f09))
+* **guide:** add token-efficiency.md — mechanism, before/after, contributor guide ([9866d93](https://github.com/hekivo/superpowers-sage/commit/9866d93842a9182579fe3354f28f0c7dd6a4b825))
+* **guide:** add workflows/first-session.md ([7324b5f](https://github.com/hekivo/superpowers-sage/commit/7324b5fdeaf33d9f5fe727364fcb489cfed80c84))
+* **guide:** add workflows/implement-feature.md — full plan-driven loop ([6da2de0](https://github.com/hekivo/superpowers-sage/commit/6da2de0f329d3c36e26cc0b21dd9638460cdafd4))
+* **guide:** add workflows/scaffold-block.md — scaffold, form integration, refactoring ([00b023e](https://github.com/hekivo/superpowers-sage/commit/00b023e4a3fb43201d10c6c9b53fa0ad64ab1e40))
+* **skills:** add Invoke-for triggers to domain reference skills ([f1a6e91](https://github.com/hekivo/superpowers-sage/commit/f1a6e9110b809c0e08e1da46e77dfbc9ab2b19cd))
+* **skills:** add Invoke/Skip triggers to workflow skill descriptions ([8e39f37](https://github.com/hekivo/superpowers-sage/commit/8e39f379f665378080165913b8234003f292d3fe))
+* **skills:** tighten sageing description — remove always-on trigger ([e761efe](https://github.com/hekivo/superpowers-sage/commit/e761efe77d7e079ac5a1e5b855f7a1a2ae88a5cd))
+* slim README to intro+install+links, move detail to docs/guide/ ([a770346](https://github.com/hekivo/superpowers-sage/commit/a770346db3823ba04010f4b1c9e356ee049cd22c))
+
 ## [Unreleased]
 
 ### Performance
