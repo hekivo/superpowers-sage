@@ -2,6 +2,8 @@
 
 Agent plugin for modern WordPress development with the **Roots ecosystem** — works with **Claude Code**, **VS Code (GitHub Copilot)**, **Cursor**, **OpenAI Codex**, and any AI assistant that supports the agent plugin format. Workflow skills, design tool integration, visual verification, content modeling, and zero-token automation hooks for **Sage**, **Acorn**, and **Lando** projects.
 
+**[Full documentation →](https://hekivo.github.io/superpowers-sage/)**
+
 ## Prerequisites
 
 | Requirement | Version |
