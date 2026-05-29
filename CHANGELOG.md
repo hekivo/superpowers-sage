@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.1](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.10.0...superpowers-sage-v2.10.1) (2026-05-29)
+
+
+### Bug Fixes
+
+* correct claude plugin install command (marketplace suffix) ([f76c1a9](https://github.com/hekivo/superpowers-sage/commit/f76c1a9fa3ef850abb1c0aa929ef69bf77464915))
+
 ## [2.10.0](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.9.0...superpowers-sage-v2.10.0) (2026-05-28)
 
 
