@@ -23,7 +23,7 @@ Agent plugin for modern WordPress development with the **Roots ecosystem** — w
 
 ```bash
 claude plugin marketplace add codigodoleo/superpowers-sage
-claude plugin install superpowers-sage@superpowers-sage
+claude plugin install superpowers-sage@superpowers-sage-marketplace
 ```
 
 Alternatively, install directly from the repository URL:
