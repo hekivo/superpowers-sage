@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.11.0](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.10.0...superpowers-sage-v2.11.0) (2026-06-05)
+
+
+### Features
+
+* **codex:** generate plugins/ + .agents/ layout for Codex CLI &gt;= 0.137 ([db2f631](https://github.com/hekivo/superpowers-sage/commit/db2f631cc060bdc912acaed57f909ae156a20a8b))
+
+
+### Bug Fixes
+
+* **codex:** generate plugins/ + .agents/ layout for Codex CLI ≥ 0.137 ([61dd59b](https://github.com/hekivo/superpowers-sage/commit/61dd59b838ba967b50ef919e12cda52e20920099))
+* correct claude plugin install command (marketplace suffix) ([f76c1a9](https://github.com/hekivo/superpowers-sage/commit/f76c1a9fa3ef850abb1c0aa929ef69bf77464915))
+
 ## [2.10.0](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.9.0...superpowers-sage-v2.10.0) (2026-05-28)
 
 
