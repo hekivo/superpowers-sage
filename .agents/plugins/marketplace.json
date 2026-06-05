@@ -1,0 +1,20 @@
+{
+  "name": "superpowers-sage-marketplace",
+  "interface": {
+    "displayName": "Superpowers Sage"
+  },
+  "plugins": [
+    {
+      "name": "superpowers-sage",
+      "version": "2.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/superpowers-sage"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Development"
+    }
+  ]
+}

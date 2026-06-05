@@ -105,33 +105,37 @@ Cursor discovers skills and agents from `.cursor/rules/` automatically. Hooks ar
 
 ### OpenAI Codex
 
-The plugin ships with a `.codex-plugin/plugin.json` manifest that follows the
-[Codex plugin format](https://developers.openai.com/codex/plugins/build).
+The plugin ships in the current
+[Codex plugin format](https://developers.openai.com/codex/plugins/build): a
+marketplace manifest at `.agents/plugins/marketplace.json` and the plugin under
+`plugins/superpowers-sage/`.
 
-**Personal install:**
+Install (Codex CLI ≥ 0.137):
 
-1. Clone or symlink the repository into your Codex plugins directory:
+```bash
+codex plugin marketplace add codigodoleo/superpowers-sage
+codex plugin add superpowers-sage@superpowers-sage-marketplace
+```
 
-   ```bash
-   git clone https://github.com/codigodoleo/superpowers-sage ~/.codex/plugins/superpowers-sage
-   ```
+To run against a local model (e.g. Ollama), point Codex at it via
+`~/.codex/config.toml`:
 
-2. Register it in your personal marketplace at `~/.agents/plugins/marketplace.json`:
+```toml
+model = "your-model"
+model_provider = "local_ollama"
 
-   ```json
-   {
-     "plugins": [
-       { "name": "superpowers-sage", "source": "./superpowers-sage" }
-     ]
-   }
-   ```
+[model_providers.local_ollama]
+name = "Ollama"
+base_url = "http://localhost:11434/v1/"
+wire_api = "responses"   # Codex ≥ 0.137 dropped "chat"
+```
 
-**Repo-level install** — drop the same entry into
-`$REPO_ROOT/.agents/plugins/marketplace.json` and clone into
-`$REPO_ROOT/plugins/superpowers-sage`.
-
-Codex discovers skills from `skills/`, agents from `agents/`, and lifecycle
-hooks from `hooks/hooks.json` (referenced from `.codex-plugin/plugin.json`).
+> **`plugins/superpowers-sage/` and `.agents/plugins/marketplace.json` are
+> generated — do not edit them by hand.** The source of truth is `skills/`,
+> `hooks/`, and `.codex-plugin/plugin.json` at the repo root. After changing
+> those, run `node scripts/build-codex-plugin.mjs` (CI enforces sync via
+> `--check`). Codex copies the plugin into its cache on install and does **not**
+> follow symlinks, so the directory must hold real files.
 
 ---
 

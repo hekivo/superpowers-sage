@@ -23,6 +23,9 @@ jobs:
       - name: Verify Codex/Cursor manifests are in sync with Claude
         run: node scripts/sync-codex-manifests.mjs --check
 
+      - name: Verify generated Codex plugin (plugins/ + .agents/) is in sync
+        run: node scripts/build-codex-plugin.mjs --check
+
   tests:
     name: Script tests
     runs-on: ubuntu-latest

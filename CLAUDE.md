@@ -13,7 +13,12 @@ precedence over skill-local guidance unless a skill explicitly overrides.
   keep `hooks/hooks.json` and `hooks/cursor-hooks.json` in sync via
   `scripts/sync-cursor-hooks.mjs`. Manifest versions across
   `.claude-plugin/`, `.cursor-plugin/`, and `.codex-plugin/` are aligned by
-  `scripts/sync-codex-manifests.mjs` (also enforced in CI).
+  `scripts/sync-codex-manifests.mjs` (also enforced in CI). The Codex CLI
+  (>= 0.137) layout — `.agents/plugins/marketplace.json` and the real-content
+  plugin under `plugins/superpowers-sage/` — is **generated** from the root
+  source (`skills/`, `hooks/`, `.codex-plugin/plugin.json`) by
+  `scripts/build-codex-plugin.mjs`; run it after changing those, never edit the
+  generated dirs by hand (CI enforces sync via `--check`).
 
 ## Protected files (never edit directly)
 
