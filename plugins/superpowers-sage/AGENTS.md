@@ -1,3 +1,6 @@
+<!-- GENERATED de CLAUDE.md por scripts/build-codex-plugin.mjs — não edite à mão. -->
+<!-- Regras universais superpowers-sage para Codex e ferramentas que leem AGENTS.md. -->
+
 # Superpowers Sage — Universal Rules
 
 Rules applied in every session where this plugin is active. These take
