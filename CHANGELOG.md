@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.11.1](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.11.0...superpowers-sage-v2.11.1) (2026-06-08)
+
+
+### Bug Fixes
+
+* deliver house conventions cross-harness via AGENTS.md + fix dropped session-start context ([db58c9d](https://github.com/hekivo/superpowers-sage/commit/db58c9d568c176824f85ce538c65fb6eeee90e70))
+* deliver house conventions cross-harness via AGENTS.md + fix dropped session-start context ([dc7712c](https://github.com/hekivo/superpowers-sage/commit/dc7712cab5a9ec5fd19d3d6cbfc3161d0c877855))
+
 ## [2.11.0](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.10.0...superpowers-sage-v2.11.0) (2026-06-05)
 
 

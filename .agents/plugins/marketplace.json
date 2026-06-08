@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "superpowers-sage",
-      "version": "2.11.0",
+      "version": "2.11.1",
       "source": {
         "source": "local",
         "path": "./plugins/superpowers-sage"
