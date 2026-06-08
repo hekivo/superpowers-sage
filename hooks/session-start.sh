@@ -197,7 +197,12 @@ COMPACT_GUIDE="${COMPACT_GUIDE}\n| Safe data migration | \`/migrating\` |"
 COMPACT_GUIDE="${COMPACT_GUIDE}\n| Design system setup | \`/sage-design-system\` |"
 COMPACT_GUIDE="${COMPACT_GUIDE}\n| AI/MCP installation | \`/ai-setup\` |"
 COMPACT_GUIDE="${COMPACT_GUIDE}\n"
-COMPACT_GUIDE="${COMPACT_GUIDE}\nPreferred patterns: CPTs → Poet \xb7 Routes → Acorn Routes \xb7 Fields/Blocks → ACF Composer \xb7 Interactive UI → Livewire."
+COMPACT_GUIDE="${COMPACT_GUIDE}\nPreferred patterns: CPTs -> Poet; Routes -> Acorn Routes; Fields/Blocks -> ACF Composer; Interactive UI -> Livewire."
+COMPACT_GUIDE="${COMPACT_GUIDE}\nNon-negotiable shapes (hold even one-shot, no skill invoke needed):"
+COMPACT_GUIDE="${COMPACT_GUIDE}\n- Field group = class \`extends Field\` with \`Builder::make('name')\`; put \`\$fields->setLocation(...)\` on its OWN line (never chained onto make())."
+COMPACT_GUIDE="${COMPACT_GUIDE}\n- Blade escaping by field type: addText -> \`{{ \$f }}\`, addTextarea -> \`@textarea(\$f)\`, addWysiwyg -> \`{!! wp_kses_post(\$f) !!}\`; never nl2br(esc_html())."
+COMPACT_GUIDE="${COMPACT_GUIDE}\n- Block data at render caches reads in a transient: \`get_transient()\`, on miss run query then \`set_transient(\$key, \$data, \$ttl)\`."
+COMPACT_GUIDE="${COMPACT_GUIDE}\n- Livewire on Bedrock: its \`/livewire/update\` endpoint must resolve (pretty permalinks + Acorn routes); verify \`lando acorn route:list\`."
 COMPACT_GUIDE="${COMPACT_GUIDE}\nFor full architectural preferences and MCP query patterns: invoke \`sageing\`."
 
 #############################################

@@ -117,6 +117,22 @@ codex plugin marketplace add codigodoleo/superpowers-sage
 codex plugin add superpowers-sage@superpowers-sage-marketplace
 ```
 
+**Activate the house rules (important).** Unlike Claude Code, Codex does **not**
+load a plugin's `CLAUDE.md` — it reads `AGENTS.md` from the project root (and
+`~/.codex/AGENTS.md`). The plugin ships the same universal rules as a generated
+[`AGENTS.md`](AGENTS.md). Bring them into your Sage project once:
+
+```bash
+# from your project root — appends the superpowers-sage universal rules
+curl -fsSL https://raw.githubusercontent.com/codigodoleo/superpowers-sage/main/AGENTS.md >> AGENTS.md
+```
+
+Without this, Codex still loads the skills on demand, but the always-on house
+conventions (ACF Composer field shapes, transient caching, Blade escaping by
+field type, Livewire-on-Bedrock route) won't fire one-shot. In measured runs,
+delivering these rules via `AGENTS.md` lifted Codex's house-convention adherence
+from 62% to 86%.
+
 To run against a local model (e.g. Ollama), point Codex at it via
 `~/.codex/config.toml`:
 
@@ -130,10 +146,11 @@ base_url = "http://localhost:11434/v1/"
 wire_api = "responses"   # Codex ≥ 0.137 dropped "chat"
 ```
 
-> **`plugins/superpowers-sage/` and `.agents/plugins/marketplace.json` are
-> generated — do not edit them by hand.** The source of truth is `skills/`,
-> `hooks/`, and `.codex-plugin/plugin.json` at the repo root. After changing
-> those, run `node scripts/build-codex-plugin.mjs` (CI enforces sync via
+> **`AGENTS.md`, `plugins/superpowers-sage/`, and
+> `.agents/plugins/marketplace.json` are generated — do not edit them by hand.**
+> The source of truth is `skills/`, `hooks/`, `.codex-plugin/plugin.json`, and
+> `CLAUDE.md` at the repo root (`AGENTS.md` is mirrored from `CLAUDE.md`). After
+> changing those, run `node scripts/build-codex-plugin.mjs` (CI enforces sync via
 > `--check`). Codex copies the plugin into its cache on install and does **not**
 > follow symlinks, so the directory must hold real files.
 

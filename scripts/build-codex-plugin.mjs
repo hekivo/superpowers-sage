@@ -78,6 +78,20 @@ function buildArtifacts() {
     JSON.stringify(manifest, null, 2) + '\n';
   out[`plugins/${PLUGIN_NAME}/GENERATED.md`] = `# ${GENERATED_NOTE}\n`;
 
+  // 2b. AGENTS.md — regras universais espelhadas de CLAUDE.md para ferramentas
+  // que carregam AGENTS.md como instrução sempre-on (OpenAI Codex etc.). Diferente
+  // do Claude Code, o Codex NÃO carrega o CLAUDE.md do plugin nem auto-carrega o
+  // AGENTS.md do diretório do plugin — ele lê o AGENTS.md do PROJETO (cwd pra cima)
+  // e ~/.codex/AGENTS.md. Por isso geramos o canônico aqui (fonte única: CLAUDE.md)
+  // e o usuário Codex traz para o root do projeto (ver README → OpenAI Codex).
+  const claudeMd = readFileSync(resolve(ROOT, 'CLAUDE.md'), 'utf8');
+  const agentsBody =
+    '<!-- GENERATED de CLAUDE.md por scripts/build-codex-plugin.mjs — não edite à mão. -->\n' +
+    '<!-- Regras universais superpowers-sage para Codex e ferramentas que leem AGENTS.md. -->\n\n' +
+    claudeMd;
+  out['AGENTS.md'] = agentsBody;
+  out[`plugins/${PLUGIN_NAME}/AGENTS.md`] = agentsBody;
+
   // 3. conteúdo espelhado (skills/, hooks/) — arquivos reais
   for (const dir of MIRROR) {
     const srcDir = resolve(ROOT, dir);
