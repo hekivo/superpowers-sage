@@ -38,12 +38,14 @@ For installation and compatibility, see the [README](../../README.md).
 | [agents.md](agents.md) | All 11 agents — purpose, invocation, input, output |
 | [commands.md](commands.md) | 3 slash commands: `/acf-register`, `/livewire-new`, `/sage-status` |
 | [hooks.md](hooks.md) | Session-start, keyword router (32 entries), post-edit, diagnostics |
-| [token-efficiency.md](token-efficiency.md) | How the plugin saves tokens — mechanism and contributor guidance |
+| [token-efficiency.md](token-efficiency.md) | How the plugin saves tokens + model-tier vs cost vs fidelity |
+| [troubleshooting.md](troubleshooting.md) | Environment gotchas (Lando/Docker, ACF, Figma seat, fonts) — symptom → fix |
 
 ## Practical Guides
 
 | File | What it covers |
 |---|---|
+| [how-to.md](how-to.md) | **Start here** — step-by-step: interactions × prompts × expected results |
 | [workflows/first-session.md](workflows/first-session.md) | What to do in the first session on a new project |
 | [workflows/implement-feature.md](workflows/implement-feature.md) | Full plan-driven feature loop from discovery to PR |
 | [workflows/scaffold-block.md](workflows/scaffold-block.md) | New block scaffold, form integration, block refactoring |
