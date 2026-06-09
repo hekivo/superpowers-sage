@@ -243,14 +243,21 @@ This analyzes your project, detects installed packages, design tools, and active
 
 Full usage guide in [`docs/guide/`](docs/guide/):
 
+> **New here? Start with the [How-To](docs/guide/how-to.md)** — a practical,
+> step-by-step walkthrough of the real flow (orient → design → foundation →
+> architect → build → verify → ship) with the prompt you type and the result to
+> expect at each step.
+
 | File | What it covers |
 |---|---|
+| [how-to.md](docs/guide/how-to.md) | **Practical step-by-step: interactions × prompts × expected results** |
 | [INDEX.md](docs/guide/INDEX.md) | Quick decision table + links to all sections |
 | [skills.md](docs/guide/skills.md) | All 19 workflow skills + 17 reference skills + architectural preferences |
 | [agents.md](docs/guide/agents.md) | All 11 agents — purpose, invocation, input, output |
 | [commands.md](docs/guide/commands.md) | 3 slash commands: `/acf-register`, `/livewire-new`, `/sage-status` |
 | [hooks.md](docs/guide/hooks.md) | Session-start behavior, keyword router (32 entries), diagnostics |
-| [token-efficiency.md](docs/guide/token-efficiency.md) | How the plugin saves tokens — mechanism and contributor guidance |
+| [token-efficiency.md](docs/guide/token-efficiency.md) | How the plugin saves tokens + model-tier vs cost vs fidelity |
+| [troubleshooting.md](docs/guide/troubleshooting.md) | Environment gotchas (Lando/Docker, ACF, Figma seat, fonts) — symptom → fix |
 
 ### Practical guides
 

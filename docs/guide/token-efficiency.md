@@ -106,3 +106,37 @@ echo "Chars: ${#COMPACT_GUIDE}"
 ```
 
 The full session-start output (including project detection, design tool listing, and the compact guide) is typically 2,000–3,500 chars total depending on the project's active plans and detected tools.
+
+---
+
+## Model tier vs cost vs fidelity
+
+Token efficiency isn't only *what's in context* — it's also *which model runs the
+work*. Measured on an 8-prompt house-style holdout (hardest-convention subset, with
+the plugin's rules delivered), per model:
+
+| Tier | House-convention adherence | Relative cost |
+|---|---|---|
+| Claude Haiku 4.5 | 66% | 1× (cheapest) |
+| Claude Sonnet 4.6 | 66% | ~4× Haiku |
+| Claude Opus 4.8 | 86% | ~8× Haiku |
+
+Takeaways for routing work:
+
+- **On routine scaffolding, Haiku matches Sonnet.** For straightforward, well-specced
+  block work, route to the cheaper tier — Sonnet doesn't buy fidelity over Haiku here.
+- **The top tier earns its cost only on hard / ambiguous work.** Opus's jump to 86%
+  shows up where deep reasoning matters (subtle conventions, novel layout decisions).
+- **Suggested routing:** mechanical/clear → Haiku · architecture/ambiguous/"must be
+  right" → Opus · Sonnet for a balanced middle.
+
+> **Fidelity ≠ tokens.** A wireframe-to-production jump in a UI build came almost
+> entirely from the **verify→fix loop** (see [how-to.md](how-to.md)), not from a
+> bigger model or more generation tokens. The cheapest path to a *correct-looking*
+> result is the loop, not the tier. Spend tier where judgement matters; spend
+> iterations where fidelity matters.
+
+### Caveat
+The holdout is the hardest-convention subset with binary heuristic checks (n=8) —
+directional, not a benchmark. On easy work the tiers converge; treat this as
+"route down when you safely can," not a fixed rule.
