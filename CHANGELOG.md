@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.11.2](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.11.1...superpowers-sage-v2.11.2) (2026-06-09)
+
+
+### Documentation
+
+* add practical how-to + troubleshooting + tier/fidelity guidance ([a02c454](https://github.com/hekivo/superpowers-sage/commit/a02c45420a00149f2e881a76bc0f2b1ebc897e14))
+* practical how-to + troubleshooting + tier/fidelity guidance ([8104f22](https://github.com/hekivo/superpowers-sage/commit/8104f22b4ade54ddca583924dff69fb0ef260416))
+
 ## [2.11.1](https://github.com/hekivo/superpowers-sage/compare/superpowers-sage-v2.11.0...superpowers-sage-v2.11.1) (2026-06-08)
 
 
